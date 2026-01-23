@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "projectId": "frejusdev",
+      "projectNumber": "504420140359",
+      "displayName": "FrejusDev",
+      "name": "projects/frejusdev",
+      "resources": {
+        "hostingSite": "frejusdev"
+      },
+      "state": "ACTIVE",
+      "etag": "1_795b66c7-5d1c-4719-aeba-8c450186435a"
+    },
+    {
+      "projectId": "frejuste-dev-portfolio",
+      "projectNumber": "148959210628",
+      "displayName": "Frejuste Dev Portfolio",
+      "name": "projects/frejuste-dev-portfolio",
+      "resources": {
+        "hostingSite": "frejuste-dev-portfolio"
+      },
+      "state": "ACTIVE",
+      "etag": "1_d95c1dca-0b38-422d-9deb-05e16c6d6f17"
+    }
+  ]
+}

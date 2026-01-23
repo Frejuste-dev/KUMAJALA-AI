@@ -1,0 +1,45 @@
+# Dockerfile pour l'entraînement du modèle TensorFlow Kumajala
+
+# Utiliser une image Python 3.11 ou 3.12 stable pour TensorFlow
+FROM python:3.11-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Installer les dépendances système nécessaires
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copier les fichiers de dépendances
+COPY requirements.txt .
+
+# Installer les dépendances Python
+# On utilise pip install sans version pinning pour tensorflow si besoin, 
+# mais ici on va forcer une version stable pour 3.11
+RUN pip install --no-cache-dir tensorflow==2.15.0 \
+    numpy==1.24.3 \
+    sacrebleu==2.3.1 \
+    matplotlib==3.8.2 \
+    seaborn==0.13.0 \
+    Flask==2.3.3 \
+    Flask-CORS==4.0.0 \
+    google-cloud-firestore==2.13.1 \
+    gTTS==2.5.4 \
+    google-generativeai==0.3.2 \
+    python-dotenv==1.0.0 \
+    requests==2.31.0
+
+# Copier le reste du code de l'application
+COPY . .
+
+# Créer les dossiers nécessaires pour le ML
+RUN mkdir -p ml/models ml/logs ml/checkpoints
+
+# Exposer le port pour l'API Flask et TensorBoard
+EXPOSE 5000 6006
+
+# Commande par défaut : afficher l'aide
+CMD ["python", "-m", "ml.data_preparation"]

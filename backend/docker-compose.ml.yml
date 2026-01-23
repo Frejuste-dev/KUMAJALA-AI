@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Service d'entraînement
+  training:
+    build:
+      context: .
+      dockerfile: Dockerfile-ml
+    volumes:
+      - .:/app
+    command: python -m ml.training --target-language bété --epochs 100
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # Service de monitoring (TensorBoard)
+  tensorboard:
+    build:
+      context: .
+      dockerfile: Dockerfile-ml
+    volumes:
+      - .:/app
+    ports:
+      - "6006:6006"
+    command: tensorboard --logdir ml/logs --host 0.0.0.0
+
+  # API Backend avec TensorFlow intégré
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-ml
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    command: python app.py

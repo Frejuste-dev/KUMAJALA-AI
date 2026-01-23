@@ -1,0 +1,229 @@
+/* ===== MINI FRAMEWORK CSS - FUTURISTIC THEME (ORANGE/GOLD EDITION) ===== */
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* ===== VARIABLES CSS (TOKENS DE DESIGN) ===== */
+:root {
+  /* Couleurs principales (Mode Sombre - Brand Orange/Gold) */
+  --cl-primary: #F1890E;
+  /* Kumajala Orange */
+  --cl-primary-rgb: 241, 137, 14;
+
+  --cl-secondary: #E3AA1B;
+  /* Kumajala Gold */
+  --cl-secondary-rgb: 227, 170, 27;
+
+  --cl-tertiary: #FF4500;
+  /* Accent Red-Orange */
+  --cl-tertiary-rgb: 255, 69, 0;
+
+  --cl-bg-dark: #050510;
+  /* Deep Space Black */
+  --cl-bg-panel: #0A0A1F;
+  /* Slightly lighter for panels */
+  --cl-bg-input: #0F0F25;
+  /* Input background */
+
+  --cl-white: #FFF5E6;
+  /* Warm White */
+  --cl-black: #000000;
+
+  /* Couleurs étendues */
+  --cl-gray-50: #1A1A2E;
+  --cl-gray-100: #252540;
+  --cl-gray-200: #303050;
+  --cl-gray-300: #4A4A70;
+  --cl-gray-400: #707090;
+  --cl-gray-500: #9090B0;
+  --cl-gray-600: #B0B0D0;
+  --cl-gray-700: #D0D0E0;
+  --cl-gray-800: #E0E0F0;
+  --cl-gray-900: #F0F0FF;
+
+  /* États */
+  --cl-success: #00FF9D;
+  --cl-warning: #FFD600;
+  --cl-error: #FF003C;
+  --cl-info: #F1890E;
+
+  /* Typographie */
+  --font-primary: 'Rajdhani', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+  --font-secondary: system-ui, -apple-system, sans-serif;
+
+  /* Tailles de police */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+  --fs-5xl: 4rem;
+
+  /* Poids de police */
+  --fw-thin: 300;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* Espacement */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Rayons de bordure */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Ombres & Glows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  /* Orange/Gold Glows */
+  --glow-primary: 0 0 10px rgba(241, 137, 14, 0.5), 0 0 20px rgba(241, 137, 14, 0.3);
+  --glow-secondary: 0 0 10px rgba(227, 170, 27, 0.5), 0 0 20px rgba(227, 170, 27, 0.3);
+  --glow-text: 0 0 5px rgba(241, 137, 14, 0.8);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-color: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), text-shadow var(--transition-base);
+
+  /* Points de rupture */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+}
+
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: 1.6;
+  background-color: var(--cl-bg-dark);
+  color: var(--cl-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ===== UTILITIES FUTURISTES ===== */
+.text-glow {
+  text-shadow: var(--glow-text);
+}
+
+.neon-border {
+  border: 1px solid var(--cl-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.neon-border-bottom {
+  border-bottom: 1px solid var(--cl-primary);
+  box-shadow: 0 4px 6px -4px rgba(241, 137, 14, 0.5);
+}
+
+.neon-border-hover:hover {
+  border-color: var(--cl-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.glass-panel {
+  background: rgba(10, 10, 31, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--cl-primary), var(--cl-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.glow-button {
+  background: var(--cl-primary);
+  color: var(--cl-bg-dark);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--cl-primary), var(--cl-secondary));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-button:hover::before {
+  opacity: 1;
+}
+
+.glow-button:hover {
+  box-shadow: var(--glow-primary);
+  transform: translateY(-2px);
+}

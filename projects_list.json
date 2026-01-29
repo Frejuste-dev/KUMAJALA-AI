@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "projectId": "frejusdev",
+      "projectNumber": "504420140359",
+      "displayName": "FrejusDev",
+      "name": "projects/frejusdev",
+      "resources": {
+        "hostingSite": "frejusdev"
+      },
+      "state": "ACTIVE",
+      "etag": "1_795b66c7-5d1c-4719-aeba-8c450186435a"
+    },
+    {
+      "projectId": "frejuste-dev-portfolio",
+      "projectNumber": "148959210628",
+      "displayName": "Frejuste Dev Portfolio",
+      "name": "projects/frejuste-dev-portfolio",
+      "resources": {
+        "hostingSite": "frejuste-dev-portfolio"
+      },
+      "state": "ACTIVE",
+      "etag": "1_d95c1dca-0b38-422d-9deb-05e16c6d6f17"
+    },
+    {
+      "projectId": "gen-lang-client-0195661235",
+      "projectNumber": "119870184890",
+      "displayName": "kumajala-ai",
+      "name": "projects/gen-lang-client-0195661235",
+      "resources": {
+        "hostingSite": "gen-lang-client-0195661235"
+      },
+      "state": "ACTIVE",
+      "etag": "1_2b24a5bf-e990-4e7d-a737-59b680fcbe04"
+    }
+  ]
+}

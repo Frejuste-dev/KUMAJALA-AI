@@ -4,8 +4,6 @@
 
 <img src="kumajala.jpg" alt="KUMAJALA Logo" width="400"/>
 
-# KUMAJALA
-
 ### La parole qui voyage. La culture qui vit.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -536,3 +534,4 @@ MIT License © 2025 Équipe KUMAJALA - AbiHack
 **#AbiHack #TechForGood #PreserveOurLanguages**
 
 </div>
+

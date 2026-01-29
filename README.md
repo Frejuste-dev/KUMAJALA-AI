@@ -1,529 +1,536 @@
-# 🌍 KUMAJALA
+<div align="center">
+
+<img src="kumajala.jpg" alt="KUMAJALA Logo" width="400"/>
+
+# KUMAJALA
+
 ### La parole qui voyage. La culture qui vit.
+
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![Flask](https://img.shields.io/badge/Flask-2.3-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-ML-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://tensorflow.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-MVP-orange?style=flat-square)]()
+[![Firebase](https://img.shields.io/badge/Firebase-Deployed-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com)
+
+<br/>
+
+**Application de traduction français → langues africaines avec IA et synthèse vocale**
+
+[🚀 Demo Live](https://kumajala.vercel.app) · [📖 Documentation](#-documentation-api) · [🐛 Signaler un bug](https://github.com/Frejuste-dev/KUMAJALA-AI/issues)
+
+</div>
 
 ---
 
-## 📝 Présentation du projet
-**KUMAJALA** est une application web innovante qui permet de **traduire du français vers des langues locales africaines** (Bété, Baoulé, Mooré, Agni), et de **restituer la traduction sous forme de texte et de voix**.  
+## 📋 Table des matières
 
-Ce projet a été conçu dans le cadre de **l'AbiHack Hackathon** pour valoriser les langues africaines dans le numérique, en combinant l'intelligence artificielle (Gemini) et les services cloud (Google Cloud).
+<details>
+<summary>Cliquez pour développer</summary>
+
+- [🎯 À propos](#-à-propos)
+- [✨ Fonctionnalités](#-fonctionnalités)
+- [🌐 Langues Supportées](#-langues-supportées)
+- [🏗️ Architecture](#️-architecture)
+- [🚀 Démarrage Rapide](#-démarrage-rapide)
+- [🐳 Docker](#-docker)
+- [📖 Documentation API](#-documentation-api)
+- [🗃️ Structure du Projet](#️-structure-du-projet)
+- [🛣️ Roadmap](#️-roadmap)
+- [🤝 Contribution](#-contribution)
+- [📜 Licence](#-licence)
+- [👥 Équipe](#-équipe)
+
+</details>
+
+---
+
+## 🎯 À propos
+
+> *« Une langue qui disparaît, c'est une bibliothèque qui brûle. »*  
+> — **Amadou Hampâté Bâ**
+
+**KUMAJALA** est une plateforme innovante de **préservation des langues africaines** à travers la technologie. Développée lors du **AbiHack Hackathon**, elle combine l'intelligence artificielle et le cloud computing pour rendre accessibles les traductions entre le français et les langues locales africaines.
+
+<div align="center">
+
+| 🎙️ | 🤖 | ☁️ | 🔊 |
+|:---:|:---:|:---:|:---:|
+| **Traduction** | **Intelligence Artificielle** | **Cloud Native** | **Synthèse Vocale** |
+| Français vers<br/>langues africaines | Gemini AI +<br/>TensorFlow | Firebase &<br/>Cloud Run | Écouter les<br/>traductions |
+
+</div>
 
 ---
 
 ## ✨ Fonctionnalités
 
-### 🎯 MVP (Version 1.0)
-✅ **Traduction intelligente** : Français → Langues africaines locales  
-✅ **Cache haute performance** : Réponses ultra-rapides pour les traductions fréquentes  
-✅ **Fallback IA avec Gemini** : Traductions contextuelles pour nouveaux textes  
-✅ **Synthèse vocale** : Écouter les traductions (Text-to-Speech via gTTS)  
-✅ **Base de données Firestore** : Stockage cloud ou local selon configuration  
-✅ **API REST robuste** : Gestion d'erreurs, validation, logging  
-✅ **Traduction batch** : Traduire plusieurs textes en une seule requête  
-✅ **Gestion manuelle** : Ajouter/modifier des traductions  
-✅ **Recherche de traductions** : Trouver rapidement des expressions  
+<table>
+<tr>
+<td width="50%">
 
-### 🚀 Fonctionnalités Avancées
-✅ **Retry automatique** : Gestion des erreurs réseau avec backoff exponentiel  
-✅ **Validation intelligente** : Détection de traductions invalides  
-✅ **Statistiques de cache** : Monitoring des performances  
-✅ **Pagination** : Gestion efficace de grandes quantités de données  
-✅ **Support multilingue** : Architecture extensible pour nouvelles langues  
+### 🎯 Core Features
+
+- ✅ **Traduction Intelligente**
+  - Français → Bété, Baoulé, Mooré, Agni
+  - Cache haute performance
+  - Fallback IA avec Gemini
+
+- ✅ **Synthèse Vocale**
+  - Text-to-Speech intégré
+  - Cache audio optimisé
+
+- ✅ **API REST Complète**
+  - Traduction simple & batch
+  - Gestion des traductions
+  - Recherche avancée
+
+</td>
+<td width="50%">
+
+### 🚀 Features Avancées
+
+- ✅ **Machine Learning**
+  - Modèles TensorFlow personnalisés
+  - Entraînement continu
+  - Évaluation BLEU score
+
+- ✅ **Infrastructure Robuste**
+  - Retry automatique (backoff)
+  - Validation intelligente
+  - Monitoring & logs
+
+- ✅ **Déploiement Flexible**
+  - Docker & Docker Compose
+  - Firebase Hosting
+  - Vercel (Frontend)
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🌐 Langues Supportées
 
-| Langue   | Code     | Région            | Statut        |
-|----------|----------|-------------------|---------------|
-| Bété     | `bété`   | Côte d'Ivoire     | ✅ Traduction |
-| Baoulé   | `baoulé` | Côte d'Ivoire     | ✅ Traduction |
-| Mooré    | `mooré`  | Burkina Faso      | ✅ Traduction |
-| Agni     | `agni`   | Côte d'Ivoire     | ✅ Traduction |
-| Français | `fr`     | Global            | ✅ Source     |
+<div align="center">
 
-> ⚠️ **Note TTS** : La synthèse vocale utilise actuellement gTTS qui ne supporte pas nativement les langues africaines. Les traductions sont prononcées avec un accent français. Voir [Alternatives TTS](#-alternatives-tts-recommandées) pour des solutions.
+| Drapeau | Langue | Code | Région | Statut |
+|:-------:|:------:|:----:|:------:|:------:|
+| 🇨🇮 | **Bété** | `bété` | Côte d'Ivoire | ✅ Active |
+| 🇨🇮 | **Baoulé** | `baoulé` | Côte d'Ivoire | ✅ Active |
+| 🇧🇫 | **Mooré** | `mooré` | Burkina Faso | ✅ Active |
+| 🇨🇮 | **Agni** | `agni` | Côte d'Ivoire | ✅ Active |
+| 🌍 | **Français** | `fr` | Source | ✅ Active |
 
----
+</div>
 
-## 🔧 Technologies Utilisées
-
-### 🟦 Backend (Python)
-- **Flask 2.3.3** - Framework web léger et performant
-- **Google Cloud Firestore 2.13.1** - Base de données NoSQL cloud
-- **Gemini 2.0 Flash** (via google-generativeai 0.3.2) - IA pour traduction contextuelle
-- **gTTS 2.5.4** - Synthèse vocale (Text-to-Speech)
-- **Tenacity** - Retry logic avec backoff exponentiel
-- **Python 3.9+** - Langage backend
-
-### 🟩 Frontend
-- **Vue.js 3** - Framework JavaScript progressif
-- **Tailwind CSS** - Framework CSS utility-first
-- **Axios** - Client HTTP pour les requêtes API
-
-### ☁️ Cloud & Services
-- **Google Cloud Platform** (Firestore, potentiellement Cloud Run)
-- **Gemini API** - IA générative de Google
-- **Google Text-to-Speech** (recommandé pour production)
+> 💡 **Extensible** : L'architecture permet d'ajouter facilement de nouvelles langues
 
 ---
 
-## 🛠️ Installation et Lancement
+## 🏗️ Architecture
 
-### 📋 Prérequis
-- Python 3.9 ou supérieur
-- Node.js 16+ et npm
-- Compte Google Cloud (optionnel, pour Firestore)
-- Clé API Gemini (optionnel, pour traductions IA)
-
-### 🔹 1️⃣ Cloner le projet
-```bash
-git clone https://github.com/votre-user/kumajala.git
-cd kumajala
+```mermaid
+graph TB
+    subgraph Client["🖥️ Frontend"]
+        VUE[Vue.js 3 + Vite]
+        TAIL[Tailwind CSS]
+    end
+    
+    subgraph Backend["⚙️ Backend"]
+        FLASK[Flask API]
+        ROUTES[Routes]
+        SERVICES[Services]
+    end
+    
+    subgraph AI["🤖 Intelligence Artificielle"]
+        GEMINI[Gemini 2.0 Flash]
+        TF[TensorFlow Models]
+    end
+    
+    subgraph Storage["💾 Stockage"]
+        FIRE[Firestore]
+        LOCAL[Local JSON]
+        CACHE[Cache Redis]
+    end
+    
+    subgraph Voice["🔊 Audio"]
+        GTTS[gTTS]
+        CLOUD[Google Cloud TTS]
+    end
+    
+    VUE --> FLASK
+    FLASK --> SERVICES
+    SERVICES --> GEMINI
+    SERVICES --> TF
+    SERVICES --> FIRE
+    SERVICES --> LOCAL
+    SERVICES --> GTTS
+    
+    style Client fill:#4FC08D,color:#fff
+    style Backend fill:#000,color:#fff
+    style AI fill:#FF6F00,color:#fff
+    style Storage fill:#FFCA28,color:#000
+    style Voice fill:#4285F4,color:#fff
 ```
 
-### 🔹 2️⃣ Configuration Backend
+### 🛠️ Stack Technique
 
-#### Installation des dépendances
+<div align="center">
+
+| Layer | Technologies |
+|:-----:|:-------------|
+| **Frontend** | ![Vue.js](https://img.shields.io/badge/Vue.js_3-4FC08D?style=flat&logo=vue.js&logoColor=white) ![Vite](https://img.shields.io/badge/Vite_7-646CFF?style=flat&logo=vite&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss&logoColor=white) ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white) |
+| **Backend** | ![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=flat&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Flask_2.3-000?style=flat&logo=flask&logoColor=white) ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=flat&logo=gunicorn&logoColor=white) |
+| **AI/ML** | ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=flat&logo=google&logoColor=white) |
+| **Database** | ![Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=flat&logo=firebase&logoColor=black) ![JSON](https://img.shields.io/badge/JSON-000?style=flat&logo=json&logoColor=white) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black) ![Vercel](https://img.shields.io/badge/Vercel-000?style=flat&logo=vercel&logoColor=white) |
+
+</div>
+
+---
+
+## 🚀 Démarrage Rapide
+
+### 📋 Prérequis
+
 ```bash
-cd kumajala-backend
+# Vérifier les versions
+python --version  # 3.9+
+node --version    # 18+
+docker --version  # (optionnel)
+```
+
+### ⚡ Installation en 3 étapes
+
+<details>
+<summary><b>1️⃣ Cloner le projet</b></summary>
+
+```bash
+git clone https://github.com/Frejuste-dev/KUMAJALA-AI.git
+cd KUMAJALA-AI
+```
+
+</details>
+
+<details>
+<summary><b>2️⃣ Configurer le Backend</b></summary>
+
+```bash
+cd backend
 python -m venv venv
-source venv/bin/activate  # Windows : venv\Scripts\activate
+
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-#### Configuration des variables d'environnement
-Créer un fichier `.env` à la racine de `kumajala-backend/` :
-
+Créer `.env` :
 ```env
-# Clé API Gemini (optionnel)
-GEMINI_API_KEY=votre_cle_api_gemini
-
-# Google Cloud (optionnel pour Firestore)
-GOOGLE_APPLICATION_CREDENTIALS=chemin/vers/serviceAccountKey.json
-
-# Flask
+GEMINI_API_KEY=votre_clé_api
 FLASK_ENV=development
-SECRET_KEY=votre_cle_secrete_flask
-
-# Mode de stockage (laissez vide pour mode local)
-# GOOGLE_APPLICATION_CREDENTIALS non définie = mode local automatique
+SECRET_KEY=votre_secret
 ```
 
-#### Lancement du backend
+Lancer :
 ```bash
 python app.py
+# ✅ API disponible sur http://localhost:5000
 ```
-✅ L'API tourne sur `http://localhost:5000`
 
-### 🔹 3️⃣ Configuration Frontend
+</details>
+
+<details>
+<summary><b>3️⃣ Configurer le Frontend</b></summary>
 
 ```bash
-cd kumajala-frontend
+cd frontend
 npm install
 npm run dev
+# ✅ App disponible sur http://localhost:5173
 ```
-✅ Le frontend tourne sur `http://localhost:5173`
+
+</details>
 
 ---
 
-## 📂 Structure du Projet
+## 🐳 Docker
 
+### Démarrage rapide avec Docker Compose
+
+```bash
+# Lancer tous les services
+docker-compose up -d
+
+# Vérifier le statut
+docker-compose ps
+
+# Voir les logs
+docker-compose logs -f backend
 ```
-kumajala/
-├── kumajala-backend/
-│   ├── app.py                      # Point d'entrée Flask
-│   ├── requirements.txt            # Dépendances Python
-│   ├── .env                        # Variables d'environnement (à créer)
-│   ├── routes/                     # Routes API (Blueprints)
-│   │   ├── translate.py           # Routes de traduction
-│   │   ├── speak.py               # Routes de synthèse vocale
-│   │   └── languages.py           # Routes de gestion des langues
-│   ├── services/                   # Services métier
-│   │   ├── firestore.py           # Service Firestore/Local
-│   │   ├── gemini.py              # Service Gemini AI
-│   │   └── tts.py                 # Service Text-to-Speech
-│   └── data/
-│       └── language.json          # Base locale de traductions
-│
-└── kumajala-frontend/
-    ├── src/
-    │   ├── components/            # Composants Vue réutilisables
-    │   ├── pages/                 # Pages de l'application
-    │   ├── api/                   # Services API Axios
-    │   └── App.vue                # Composant racine
-    ├── package.json
-    └── tailwind.config.js
-```
+
+### Services exposés
+
+| Service | Port | URL |
+|---------|------|-----|
+| Backend API | 5000 | http://localhost:5000 |
+| Frontend | 5173 | http://localhost:5173 |
 
 ---
 
-## 🚀 Documentation API
+## 📖 Documentation API
 
-### Base URL
+### 🔗 Base URL
+
 ```
 http://localhost:5000/kumajala-api/v1
 ```
 
 ### 📍 Endpoints Principaux
 
-#### 1️⃣ Traduction
+<details>
+<summary><b>🔤 Traduction</b></summary>
 
-**POST `/translate`** - Traduire un texte
+#### `POST /translate` - Traduire un texte
+
+```bash
+curl -X POST http://localhost:5000/kumajala-api/v1/translate \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Bonjour", "targetLanguage": "baoulé"}'
+```
+
+**Réponse :**
 ```json
-// Requête
-{
-  "text": "Bonjour, comment allez-vous?",
-  "targetLanguage": "baoulé"
-}
-
-// Réponse
 {
   "success": true,
-  "translation": "Mo ho, wo ho tè n?",
-  "text": "Bonjour, comment allez-vous?",
+  "translation": "Mo ho",
+  "text": "Bonjour",
   "targetLanguage": "baoulé",
   "source": "cache",
-  "processingTime": "15.23ms"
+  "processingTime": "12.5ms"
 }
 ```
 
-**POST `/translate/batch`** - Traduire plusieurs textes
+#### `POST /translate/batch` - Traduction multiple
+
 ```json
-// Requête
 {
   "texts": ["bonjour", "merci", "au revoir"],
   "targetLanguage": "mooré",
   "continueOnError": true
 }
-
-// Réponse
-{
-  "success": true,
-  "translations": [
-    {
-      "index": 0,
-      "text": "bonjour",
-      "translation": "Ne y windga",
-      "source": "cache",
-      "success": true
-    }
-  ],
-  "summary": {
-    "total": 3,
-    "successful": 3,
-    "failed": 0
-  }
-}
 ```
 
-**POST `/translations/manage`** - Ajouter/Modifier une traduction
+</details>
+
+<details>
+<summary><b>🔊 Synthèse Vocale</b></summary>
+
+#### `POST /speak` - Générer l'audio
+
 ```json
-{
-  "frenchText": "bonne journée",
-  "targetLanguage": "agni",
-  "newTranslation": "Nna pa"
-}
-```
-
-**GET `/translations/search`** - Rechercher des traductions
-```
-GET /translations/search?q=bonjour&targetLanguage=baoulé&limit=20
-```
-
-#### 2️⃣ Synthèse Vocale
-
-**POST `/speak`** - Générer l'audio d'un texte
-```json
-// Requête
 {
   "text": "Mo ho",
   "languageCode": "baoulé",
   "useCache": true
 }
+```
 
-// Réponse
+**Réponse :**
+```json
 {
   "success": true,
   "audioBase64": "//uQxAAA...",
   "contentType": "audio/mpeg",
-  "actualTTSLanguage": "fr",
-  "cached": false,
-  "audioSizeBytes": 12345,
-  "warning": "La langue 'baoulé' n'est pas supportée..."
+  "cached": false
 }
 ```
 
-**GET `/speak/languages`** - Langues TTS supportées  
-**GET `/speak/alternatives`** - Alternatives TTS recommandées  
-**POST `/speak/check-language`** - Vérifier support d'une langue  
-**GET `/speak/cache/stats`** - Statistiques du cache audio  
-**POST `/speak/cache/clear`** - Vider le cache audio  
+</details>
 
-#### 3️⃣ Langues
+<details>
+<summary><b>🌐 Langues</b></summary>
 
-**GET `/languages`** - Liste des langues supportées
+#### `GET /languages` - Liste des langues
+
 ```json
 {
   "success": true,
   "languages": [
     {
-      "code": "bété",
-      "name": "Bété",
-      "region": "Côte d'Ivoire",
-      "code_tts": "fr"
+      "code": "baoulé",
+      "name": "Baoulé",
+      "region": "Côte d'Ivoire"
     }
   ],
   "totalLanguages": 5
 }
 ```
 
-**GET `/languages/<code>`** - Détails d'une langue  
-**GET `/languages/<code>/translations`** - Toutes les traductions d'une langue  
-**GET `/languages/cache/stats`** - Statistiques du cache  
-**POST `/languages/cache/clear`** - Vider le cache  
+</details>
 
 ---
 
-## 🗃️ Structure des Données
+## 🗃️ Structure du Projet
 
-### Firestore (Structure Cloud)
-```json
-{
-  "translations": {
-    "bonjour_hash": {
-      "source": "fr",
-      "text": "bonjour",
-      "languages": {
-        "bété": "Akwaba",
-        "baoulé": "Mo ho",
-        "mooré": "Ne y windga",
-        "agni": "Agni oh"
-      },
-      "metadata": {
-        "updated_at": "2025-01-15T10:30:00Z",
-        "version": 1
-      }
-    }
-  }
-}
 ```
-
-### Local (data/language.json)
-```json
-{
-  "fr": {
-    "bonjour": {
-      "bété": "Akwaba",
-      "baoulé": "Mo ho",
-      "mooré": "Ne y windga",
-      "agni": "Agni oh"
-    },
-    "merci": {
-      "bété": "Akpé",
-      "baoulé": "Mo",
-      "mooré": "Barika",
-      "agni": "Akpé"
-    }
-  }
-}
+KUMAJALA-AI/
+├── 📁 backend/                    # API Flask
+│   ├── 📄 app.py                  # Point d'entrée
+│   ├── 📁 routes/                 # Endpoints API
+│   │   ├── translate.py           # Traduction
+│   │   ├── speak.py               # Text-to-Speech
+│   │   ├── languages.py           # Gestion langues
+│   │   └── contact.py             # Contact
+│   ├── 📁 services/               # Logique métier
+│   │   ├── firestore.py           # Base de données
+│   │   ├── gemini.py              # IA Gemini
+│   │   ├── tensorflow.py          # Modèles ML
+│   │   └── tts.py                 # Synthèse vocale
+│   ├── 📁 ml/                     # Machine Learning
+│   │   ├── models/                # Modèles entraînés
+│   │   ├── training/              # Scripts d'entraînement
+│   │   └── evaluation/            # Métriques
+│   └── 📁 data/                   # Données locales
+│       └── language.json          # Dictionnaire
+│
+├── 📁 frontend/                   # Application Vue.js
+│   ├── 📁 src/
+│   │   ├── 📁 components/         # Composants réutilisables
+│   │   ├── 📁 views/              # Pages
+│   │   ├── 📁 api/                # Services HTTP
+│   │   └── 📄 App.vue             # Composant racine
+│   └── 📄 package.json
+│
+├── 🐳 docker-compose.yml          # Orchestration Docker
+├── 📄 firebase.json               # Config Firebase
+└── 📖 README.md                   # Ce fichier
 ```
 
 ---
 
-## 🔐 Sécurité et Bonnes Pratiques
+## 🛣️ Roadmap
 
-### ✅ Validations Implémentées
-- Limitation de longueur des textes (5000 caractères)
-- Validation des codes de langue
-- Protection contre les injections
-- Gestion stricte des erreurs
-- Logging sécurisé (pas de données sensibles)
+<div align="center">
 
-### 🛡️ Recommandations
-- [ ] Ajouter authentification JWT pour endpoints de gestion
-- [ ] Implémenter rate limiting (limite de requêtes par IP)
-- [ ] Configurer HTTPS en production
-- [ ] Utiliser des secrets managers pour les clés API
-- [ ] Ajouter monitoring et alertes
+```mermaid
+timeline
+    title KUMAJALA Evolution
+    section V1.0 MVP
+        Traduction FR→Africain : Terminé
+        Cache & Fallback IA : Terminé
+        TTS basique : Terminé
+        API REST : Terminé
+    section V1.5
+        TensorFlow Models : En cours
+        Google Cloud TTS : Planifié
+        Tests automatisés : Planifié
+    section V2.0
+        10+ langues : Futur
+        Mobile App : Futur
+        Contribution communautaire : Futur
+    section V3.0
+        Speech-to-Text : Vision
+        API publique : Vision
+        Marketplace : Vision
+```
+
+</div>
+
+### 📊 Progression
+
+| Phase | Fonctionnalité | Statut |
+|:-----:|:---------------|:------:|
+| 1.0 | Traduction de base | ✅ |
+| 1.0 | Cache intelligent | ✅ |
+| 1.0 | Synthèse vocale | ✅ |
+| 1.5 | Modèles TensorFlow | 🔄 |
+| 1.5 | Documentation Swagger | ⏳ |
+| 2.0 | Application mobile | ⏳ |
+| 2.0 | 10+ langues | ⏳ |
 
 ---
 
-## ⚠️ Limitations Connues
+## 🤝 Contribution
 
-### Synthèse Vocale (TTS)
-❌ **gTTS ne supporte pas les langues africaines locales**  
-- Les traductions en Bété, Baoulé, Mooré et Agni sont prononcées en français
-- L'accent et la prononciation ne sont pas authentiques
+Les contributions sont les bienvenues ! 🎉
 
-### 🔊 Alternatives TTS Recommandées
-
-| Service | Support | Qualité | Coût |
-|---------|---------|---------|------|
-| **Google Cloud TTS** | Multilingue étendu | ⭐⭐⭐⭐⭐ | Payant |
-| **Azure Speech** | 100+ langues | ⭐⭐⭐⭐⭐ | Payant |
-| **Coqui TTS** | Personnalisable | ⭐⭐⭐⭐ | Gratuit |
-| **Enregistrements natifs** | Authentique | ⭐⭐⭐⭐⭐ | Variable |
-
-Pour obtenir les recommandations complètes :
 ```bash
-GET /kumajala-api/v1/speak/alternatives
+# 1. Fork le projet
+# 2. Créer une branche
+git checkout -b feature/nouvelle-fonctionnalite
+
+# 3. Commit
+git commit -m "✨ feat: Ajout d'une super fonctionnalité"
+
+# 4. Push
+git push origin feature/nouvelle-fonctionnalite
+
+# 5. Ouvrir une Pull Request
 ```
 
----
+### 📏 Guidelines
 
-## 🛤️ Roadmap
-
-### 🎯 Version 1.1 (Court terme)
-- [ ] Migration vers Google Cloud TTS ou Azure Speech
-- [ ] Ajout de tests unitaires et d'intégration
-- [ ] Documentation Swagger/OpenAPI
-- [ ] Système d'authentification (JWT)
-- [ ] Rate limiting
-
-### 🚀 Version 2.0 (Moyen terme)
-- [ ] Support de 10+ langues africaines
-- [ ] Contribution communautaire (crowdsourcing)
-- [ ] Détection automatique de langue
-- [ ] Traduction multilingue (pas seulement depuis français)
-- [ ] Application mobile (React Native / Flutter)
-
-### 🌟 Version 3.0 (Long terme)
-- [ ] IA contextuelle avancée (NLP avec TensorFlow)
-- [ ] Reconnaissance vocale (Speech-to-Text)
-- [ ] Marketplace de traductions communautaires
-- [ ] API publique pour développeurs tiers
-- [ ] Support hors-ligne (Progressive Web App)
-
----
-
-## 📊 Performance
-
-### Temps de Réponse Moyens
-- **Cache hit** : 10-20ms
-- **Gemini AI** : 500-2000ms
-- **Synthèse vocale** : 200-800ms
-
-### Capacités
-- **Traduction simple** : 5000 caractères max
-- **Traduction batch** : 100 textes max (1000 chars chacun)
-- **Cache** : 100 audios en mémoire
-- **Pagination** : 1-1000 résultats par page
-
----
-
-## 🧪 Tests
-
-### Lancer les tests (à implémenter)
-```bash
-# Tests unitaires
-pytest tests/unit/
-
-# Tests d'intégration
-pytest tests/integration/
-
-# Coverage
-pytest --cov=services --cov=routes
-```
-
----
-
-## 🚢 Déploiement
-
-### Option 1 : Google Cloud Run
-```bash
-# Build et push de l'image Docker
-gcloud builds submit --tag gcr.io/[PROJECT-ID]/kumajala-backend
-gcloud run deploy kumajala-api --image gcr.io/[PROJECT-ID]/kumajala-backend
-```
-
-### Option 2 : Heroku
-```bash
-heroku create kumajala-api
-git push heroku main
-```
-
-### Option 3 : VPS (Ubuntu)
-```bash
-# Installation avec Gunicorn + Nginx
-pip install gunicorn
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
+- 🐍 **Python** : Suivre PEP 8
+- 💚 **Vue.js** : Composition API
+- 📝 **Commits** : Convention [Conventional Commits](https://www.conventionalcommits.org/)
+- ✅ **Tests** : Ajouter des tests pour les nouvelles fonctionnalités
 
 ---
 
 ## 📜 Licence
 
-Ce projet est open-source sous licence **MIT**.
+Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ```
-MIT License
-
-Copyright (c) 2025 Équipe KUMAJALA - AbiHack
-
-Permission is hereby granted, free of charge, to any person obtaining a copy...
+MIT License © 2025 Équipe KUMAJALA - AbiHack
 ```
 
 ---
 
-## 🤝 Équipe Projet - AbiHack
+## 👥 Équipe
 
-| Rôle | Responsabilités |
-|------|-----------------|
-| **Team Leader** | Architecture globale, coordination |
-| **Backend Lead** | API Flask, services, Firestore |
-| **AI/ML Engineer** | Intégration Gemini, validation traductions |
-| **Frontend Lead** | Interface Vue.js, UX/UI |
-| **DevOps** | Déploiement, CI/CD, monitoring |
+<div align="center">
 
----
+| Rôle | Responsabilité |
+|:----:|:---------------|
+| 🎯 **Team Leader** | Architecture & Coordination |
+| ⚙️ **Backend Lead** | API Flask, Services |
+| 🤖 **AI/ML Engineer** | Gemini, TensorFlow |
+| 🎨 **Frontend Lead** | Vue.js, UX/UI |
+| 🚀 **DevOps** | Docker, CI/CD |
 
-## 🙏 Contributions
-
-Les contributions sont les bienvenues ! Voici comment participer :
-
-1. **Fork** le projet
-2. Créer une **branche** (`git checkout -b feature/AmazingFeature`)
-3. **Commit** vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une **Pull Request**
-
-### Guidelines
-- Suivre PEP 8 pour Python
-- Ajouter des tests pour nouvelles fonctionnalités
-- Documenter les changements dans le README
-- Respecter la structure du projet
+</div>
 
 ---
 
-## 📞 Contact & Support
+<div align="center">
 
-- **Email** : contact@kumajala.org (à configurer)
-- **GitHub Issues** : [github.com/votre-user/kumajala/issues](https://github.com/votre-user/kumajala/issues)
-- **Discord** : [Rejoindre le serveur](https://discord.gg/kumajala) (à créer)
+### 💌 Contact
 
----
-
-## 💡 Vision de KUMAJALA
-
-> « Une langue qui disparaît, c'est une bibliothèque qui brûle. »  
-> — Amadou Hampâté Bâ
-
-**KUMAJALA**, c'est donner une voix numérique à nos langues africaines, pour qu'elles continuent à voyager, à vivre et à prospérer dans l'ère digitale.
-
-Nous croyons que la technologie peut être un pont entre tradition et modernité, entre générations, entre cultures. Chaque traduction est une graine plantée pour préserver et faire grandir notre héritage linguistique.
+[![Email](https://img.shields.io/badge/Email-contact@kumajala.org-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@kumajala.org)
+[![GitHub](https://img.shields.io/badge/GitHub-Issues-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Frejuste-dev/KUMAJALA-AI/issues)
 
 ---
 
-## 📈 Statistiques du Projet
+<br/>
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue)
-![Flask](https://img.shields.io/badge/Flask-2.3.3-green)
-![Vue.js](https://img.shields.io/badge/Vue.js-3-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-![Status](https://img.shields.io/badge/Status-MVP-orange)
+**Fait avec ❤️ pour l'Afrique et ses langues**
 
----
+*« KUMAJALA — Donner une voix numérique à nos langues, pour qu'elles continuent à voyager et à vivre. »*
 
-**Fait avec ❤️ pour l'Afrique et ses langues**  
+<br/>
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Frejuste-dev.KUMAJALA-AI)
+
 **#AbiHack #TechForGood #PreserveOurLanguages**
+
+</div>
